@@ -1,8 +1,10 @@
 section.hero
     .container
         .hero-inner
-            .hero-first 
+            .hero-first
                 .hero-first__white
+                    .top-bar__logo
+                        img(src='../images/logo.png') 
                     .hero-first__white-title
                         .hero-first__white-title__1 YOUR
                         .hero-first__white-title__2 PERSONALIZED
@@ -10,6 +12,8 @@ section.hero
                 .hero-first__img 
                     img(src='images/hero.png')
             .hero-second
+                button.top-bar__cart
+                    img(src='../images/cart.png')
                 .hero-second__menu
                     .hero-second__menu-title TRANG CHỦ
                         ul 
@@ -23,8 +27,4 @@ section.hero
                                 a(href='#') GIFTSET
                             li.hero-second__menu-item 
                                 a(href='#') LIÊN HỆ
-    .top-bar
-        .top-bar__logo
-            img(src='../images/logo.png')
-        .top-bar__cart
-            img(src='../images/cart.png')
+
