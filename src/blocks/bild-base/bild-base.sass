@@ -1,6 +1,9 @@
 .base
     padding-top: 87px
     padding-bottom: 129px
+    +media($md)
+        padding-top: 25px
+        padding-bottom: 30px
 
     &-title 
         text-align: center
@@ -20,6 +23,15 @@
         display: grid
         grid-template-columns: repeat(4, 1fr)
         gap: 66px
+        +media($lg)
+            gap: 25px
+        +media($md)
+        padding-top: 25px
+            gap: 5px
+        +media($sm)
+            grid-template-columns: repeat(2, 2fr)
+        // +media($xs)
+        //     grid-template-columns: repeat(1, 4fr)
 
 .base-box-item
     display: flex
