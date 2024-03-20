@@ -100,7 +100,7 @@ function scripts() {            //обработчик js
 }
 
 function jscopy() {
-  return src('src/js/libs/*.js')
+  return src('src/js/libs/*/*.js')
   .pipe(dest('app/js/libs'))
 }
 

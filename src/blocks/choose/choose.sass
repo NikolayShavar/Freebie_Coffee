@@ -1,4 +1,18 @@
-@import ../../sblocks/choose-item__morning/choose-item
+@import ../../blocks_s/choose-item__morning/choose-item
+
+.choose
+    position: relative
+    .container
+        max-width: unset
+
+.choose::before
+    content: ''
+    height: 100%
+    width: 26%
+    background-color: $primary
+    z-index: -1
+    left: 0
+    position: absolute
 
 .choose-box
     &__title
@@ -16,13 +30,17 @@
             font-size: 30px
 
 .choose-box__slider
-    overflow: hidden
     display: flex
-    gap: 31px
+    padding-bottom: 127px
+    
     &__item
         width: 559px
 
+        
+        
 
-.slick-slide.not-in-center 
-  opacity: 0.5 
-  transition: opacity 0.3s ease 
+
+// .slick-cloned
+//   opacity: 0.5 
+//   transition: opacity 0.3s ease 
+
