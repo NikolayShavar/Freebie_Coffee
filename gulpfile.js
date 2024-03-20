@@ -55,19 +55,24 @@ return src('src/images/*.svg')
 
 
 function images() {     // уменьшатель картинок кроме svg
-   return src(['src/images/*.*', '!src/images/*.svg'])
+   return src(['src/images/*.*', '!src/images/*.svg','!src/images/*.gif'])
    .pipe(newer('app/images'))
    .pipe(avif({ qulity: 50 }))
 
-  .pipe(src(['src/images/*.*', '!src/images/*.svg']))
+  .pipe(src(['src/images/*.*', '!src/images/*.svg','!src/images/*.gif']))
   .pipe(newer('app/images'))
   .pipe(webp())
 
-  .pipe(src(['src/images/*.*', '!src/images/*.svg']))
+  .pipe(src(['src/images/*.*', '!src/images/*.svg','!src/images/*.gif']))
   .pipe(newer('app/images'))
   .pipe(imagemin())
 
    .pipe(dest('app/images'))
+}
+
+function gifcopy() {
+  return src('src/images/*.gif')
+  .pipe(dest('app/images'))
 }
 
 
@@ -77,11 +82,12 @@ function watching() {            //СЛЕДИЛКА и Живой сервер
       baseDir: "app/"
     }
   });
-  watch(['src/components/*.pug','src/blocks/**/*.pug','src/pages/*.pug'], pughtml)
-  watch(['src/sass/*.sass','src/blocks/**/*.sass'], styles)
+  watch(['src/components/*.pug','src/blocks/**/*.pug','src/sblocks/**/*.pug','src/pages/*.pug'], pughtml)
+  watch(['src/sass/*.sass','src/blocks/**/*.sass','src/sblocks/**/*.sass'], styles)
   watch(['src/images'], images)
   watch(['src/js/main.js', 'src/blocks/**/*.js'], scripts)
   watch(['src/js/libs/*.js'], jscopy)
+  watch(['src/images/*.gif'], gifcopy)
   watch(['src/**/*.html']).on('change', browserSync.reload);
 }
 
@@ -135,4 +141,4 @@ exports.pughtml = pughtml;
 
 
 exports.clean = series(cleanapp, html, styles, scripts)
-exports.default = parallel(pughtml, sprite, fonts, html ,styles, scripts, jscopy, images, watching);
+exports.default = parallel(pughtml, sprite, fonts, html ,styles, scripts, jscopy, gifcopy, images, watching);
