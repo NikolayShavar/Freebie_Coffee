@@ -1,0 +1,78 @@
+.giftset-box  
+    min-height: 460px
+    .giftset-box__item
+        justify-content: center
+        font-family: nunito
+        padding-bottom: 126px
+
+    &__img
+        position: relative
+        background-color: #fff
+        z-index: 1
+  
+
+    &__info
+
+        padding: 64px
+        max-width: 568px
+        background-color: #fff
+        &__price
+            padding-bottom: 12px
+            font-weight: 600
+            font-size: 20px
+            color: $accent1
+        &__title
+            padding-bottom: 12px
+            font-weight: 700
+            font-size: 24px
+        &__text
+            padding-bottom: 24px
+            font-weight: 300
+            font-size: 16px
+            height: 150px
+
+.giftset-box__img::after
+    content:''
+    position: absolute
+    background-color: $light
+    height: 100%
+    width: 50%
+    top: 0
+    left: 0
+    z-index: -1
+    
+
+
+.giftset-box__info__inf
+    display: flex
+    gap: 38px
+
+    &-blend
+        display: flex
+        &__svg
+            width: 40px
+            height: 40px
+            padding-right: 12px
+        &__text
+            font-size: 16px
+            &__first
+                font-weight: 300
+            &__second 
+                font-weight: 600
+    &-mm
+        display: flex
+        &__svg
+            width: 40px
+            height: 40px
+            padding-right: 12px
+        &__text
+            font-size: 16px
+            &__first
+                font-weight: 300
+            &__second 
+                font-weight: 600
+
+.giftset-box__info
+    .coffee-item__info-btns
+        padding-top: 46px
+        gap: 124px
