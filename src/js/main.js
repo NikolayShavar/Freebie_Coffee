@@ -13,15 +13,16 @@ $(".center").slick({
       breakpoint: 1280,
       settings: {
         rows: 1,
-        slidesToShow: 1,
+        slidesToShow: 2,
         centerPadding: "100px",
         arrows: false,
       },
     },
     {
-      breakpoint: 800,
+      breakpoint: 620,
       settings: {
         centerPadding: "10px",
+        rows: 1,
       },
     },
   ],
