@@ -2,8 +2,40 @@
 
 .choose
     position: relative
+
     .container
         max-width: unset
+
+.choose-arrows
+    display: flex   
+    
+    .arrow
+        width: 48px
+        height: 48px
+        background-color: $accent1
+        border-radius: 25px
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        
+        svg
+            width: 24px
+            height: 17px
+
+    &__left
+        position: absolute
+        top: 405px
+        left: 66px
+        z-index: 3
+
+    &__right
+        position: absolute
+        top: 405px
+        right: 66px
+        z-index: 3
+            
+
 
 .choose::before
     content: ''
@@ -15,6 +47,7 @@
     position: absolute
 
 .choose-box
+    
     &__title
         text-align: center
         
@@ -28,6 +61,28 @@
             font-family: montserrat
             font-weight: 900
             font-size: 30px
+
+.choose-box::before
+    content: ""
+    position: absolute
+    width: 8%
+    height: 100%
+    left: 0
+    top: 0
+    background-color: $primary
+    opacity: 70%
+    z-index: 2
+
+.choose-box::after
+    content: ""
+    position: absolute
+    width: 8%
+    height: 100%
+    right: 0
+    top: 0
+    background-color: #fff
+    opacity: 70%
+    z-index: 2
 
 .choose-box__slider
     display: flex

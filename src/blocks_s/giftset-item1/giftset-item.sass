@@ -1,35 +1,53 @@
 .giftset-box  
     min-height: 460px
+
     .giftset-box__item
-        justify-content: center
         font-family: nunito
         padding-bottom: 126px
+        +media($lg)
+            padding-bottom: 26px
+
 
     &__img
         position: relative
         background-color: #fff
         z-index: 1
+        min-width: 490px
+        +media($lg)
+            min-width: 200px
+        
+        +media($xs)
+            min-width: unset
+
   
 
     &__info
-
         padding: 64px
         max-width: 568px
         background-color: #fff
+        +media($lg)
+            padding: 20px
+        +media($xs)
+            padding: 5px
+
         &__price
             padding-bottom: 12px
             font-weight: 600
             font-size: 20px
             color: $accent1
+
         &__title
             padding-bottom: 12px
             font-weight: 700
             font-size: 24px
+
         &__text
             padding-bottom: 24px
             font-weight: 300
             font-size: 16px
             height: 150px
+            +media($xs)
+                height: 180px
 
 .giftset-box__img::after
     content:''
@@ -59,12 +77,15 @@
                 font-weight: 300
             &__second 
                 font-weight: 600
+
     &-mm
         display: flex
+
         &__svg
             width: 40px
             height: 40px
             padding-right: 12px
+
         &__text
             font-size: 16px
             &__first

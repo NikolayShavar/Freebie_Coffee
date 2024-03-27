@@ -5,26 +5,29 @@ $(".center").slick({
   initialSlide: 1,
   slidesToShow: 2,
   sliderToScroll: 1,
-  arrows: false,
+  prevArrow: $('.choose-arrows__left'),
+  nextArrow: $('.choose-arrows__right'),
   infinite: false,
   responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 1280,
       settings: {
+        rows: 1,
+        slidesToShow: 1,
+        centerPadding: "100px",
         arrows: false,
-        centerMode: true,
-        centerPadding: "40px",
-        slidesToShow: 2,
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: 800,
       settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: "40px",
-        slidesToShow: 1,
+        centerPadding: "10px",
       },
     },
   ],
+});
+
+$(".center").on("afterChange", function(event, slick, currentSlide) {
+  $(".choose-arrows__left").toggle(currentSlide !== 0);
+  $(".choose-arrows__right").toggle(currentSlide !== slick.slideCount - 1);
 });

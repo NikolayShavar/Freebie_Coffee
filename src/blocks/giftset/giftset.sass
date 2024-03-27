@@ -2,6 +2,12 @@
     
 .giftset
     position: relative
+
+    .giftset-box__item
+        +media($lg)
+            margin: 0 auto
+            justify-content: center
+            flex-direction: column
     
 .giftset::before
     content: ""
@@ -18,10 +24,15 @@
     padding-top: 86px
     padding-bottom: 104px
     text-align: center
+    +media($lg)
+    padding-top: 15px
+    padding-bottom: 20px
+    
     &__first
         font-family: nunito
         font-weight: 600
         font-size: 20px
+        
     &__second
         padding-top: 6px
         font-family: montserrat
@@ -46,6 +57,8 @@
         color: $primary
         border: 1px solid $light
         cursor: pointer
+        +media($xs)
+            width: auto
 
 .giftset-page.select
     background-color: #fff
@@ -53,8 +66,7 @@
 
 .giftset-box__item
     display: none
-    opacity: 0
-    transition: opacity 0.3s ease
+
 
 .show
     display: flex
