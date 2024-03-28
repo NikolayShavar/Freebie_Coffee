@@ -4,11 +4,18 @@ $(".center").slick({
   rows: 2,
   initialSlide: 1,
   slidesToShow: 2,
-  sliderToScroll: 1,
+  slidesToScroll: 1,
   prevArrow: $('.choose-arrows__left'),
   nextArrow: $('.choose-arrows__right'),
   infinite: false,
   responsive: [
+    {
+      breakpoint: 620,
+      settings: {
+        centerPadding: "10px",
+        rows: 1,
+      },
+    },
     {
       breakpoint: 1280,
       settings: {
@@ -18,13 +25,7 @@ $(".center").slick({
         arrows: false,
       },
     },
-    {
-      breakpoint: 620,
-      settings: {
-        centerPadding: "10px",
-        rows: 1,
-      },
-    },
+    
   ],
 });
 

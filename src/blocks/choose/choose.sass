@@ -28,12 +28,16 @@
         top: 405px
         left: 66px
         z-index: 3
+        +media($sm)
+            top: 90px
 
     &__right
         position: absolute
         top: 405px
         right: 66px
         z-index: 3
+        +media($sm)
+            top: 90px
             
 
 
@@ -76,6 +80,8 @@
         width: 11%
     +media($md)
         width: 14%
+    +media($xs)
+        width: 4%
 
 .choose-box::after
     content: ""
@@ -91,6 +97,8 @@
         width: 11%
     +media($md)
         width: 14%
+    +media($xs)
+        width: 4%
 
 .choose-box__slider
     display: flex
