@@ -5,12 +5,12 @@ $(".center").slick({
   initialSlide: 1,
   slidesToShow: 2,
   slidesToScroll: 1,
-  prevArrow: $('.choose-arrows__left'),
-  nextArrow: $('.choose-arrows__right'),
+  prevArrow: $(".choose-arrows__left"),
+  nextArrow: $(".choose-arrows__right"),
   infinite: false,
   responsive: [
     {
-      breakpoint: 620,
+      breakpoint: 720,
       settings: {
         centerPadding: "10px",
         rows: 1,
@@ -25,11 +25,10 @@ $(".center").slick({
         arrows: false,
       },
     },
-    
   ],
 });
 
-$(".center").on("afterChange", function(event, slick, currentSlide) {
+$(".center").on("afterChange", function (event, slick, currentSlide) {
   $(".choose-arrows__left").toggle(currentSlide !== 0);
   $(".choose-arrows__right").toggle(currentSlide !== slick.slideCount - 1);
 });

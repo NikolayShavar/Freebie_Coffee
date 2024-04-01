@@ -10,6 +10,10 @@
         align-items: center
         max-width: 450px
 
+    +media($sm)
+        padding: 10px
+        margin: 0
+
     
     &__info
         padding: 42px
@@ -19,20 +23,26 @@
             font-weight: 600
             font-size: 20px
             color: $accent1
+
         &-name 
             font-weight: 700
             font-size: 24px
             padding-bottom: 24px
+            height: 60px
+
         &-text
             font-weight: 300
             font-size: 16px
             padding-bottom: 18px
+            height: 60px
+
 
 .coffee-item__info-btns
     display: flex
     gap: 18px
     font-weight: 700
     font-size: 16px
+
     &__mau
         border: none
         cursor: pointer
@@ -40,6 +50,7 @@
         color: $accent2
         background-color: $accent1
         padding: 6px 15px
+
     &__chi
         border: none
         background-color: unset
