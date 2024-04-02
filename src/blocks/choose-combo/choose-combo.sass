@@ -1,12 +1,12 @@
-@import ../../blocks_s/choose-item__morning/choose-item
+@import ../../blocks_s/choose-combo__dam/choose-combo__dam
 
-.choose
+.choose-combo
     position: relative
 
     .container
         max-width: unset
 
-.choose-arrows
+.choose-combo-arrows
     display: flex   
     
     .arrow
@@ -25,34 +25,34 @@
 
     &__left
         position: absolute
-        top: 405px
-        left: 66px
+        top: 455px
+        left: 70px
         z-index: 3
         +media($sm)
-            top: 90px
+            top: 210px
 
     &__right
         position: absolute
-        top: 405px
-        right: 66px
+        top: 455px
+        right: 70px
         z-index: 3
         +media($sm)
-            top: 90px
+            top: 210px
             
 
 
-.choose::before
+.choose-combo::before
     content: ''
     height: 100%
     width: 26%
     background-color: $primary
     z-index: -1
-    left: 0
+    right: 0
     position: absolute
 
-.choose-box
-    padding-top: 90px
-    
+.choose-combo-box
+    padding-top: 88px
+
     &__title
         text-align: center
         
@@ -68,44 +68,32 @@
             font-weight: 900
             font-size: 30px
 
-.choose-box::before
+
+
+.choose-combo-box::after
     content: ""
     position: absolute
-    width: 7%
     height: 100%
-    left: 0
+    right: 0
     top: 0
     background-color: $primary
     opacity: 70%
     z-index: 2
+    width: 19%
+
     +media($lg)
-        width: 10%
+        width: 11%
+
     +media($md)
         width: 3%
 
 
-.choose-box::after
-    content: ""
-    position: absolute
-    width: 8%
-    height: 100%
-    right: 0
-    top: 0
-    background-color: #fff
-    opacity: 70%
-    z-index: 2
-    +media($lg)
-        width: 10%
-    +media($md)
-        width: 3%
 
-
-.choose-box__slider
+.choose-combo-box__slider
     display: flex
     padding-bottom: 127px
     
-    &__item
-        width: 559px
+
 
         
         
