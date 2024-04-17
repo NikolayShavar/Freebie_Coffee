@@ -10,7 +10,7 @@ const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
-const fonter = require('gulp-fonter');
+const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const svgSprite = require('gulp-svg-sprite');
 const include = require('gulp-include');
@@ -26,15 +26,13 @@ function pughtml() {
 
 
 function fonts () {
-  return src('src/fonts/*.*')
-  .pipe(fonter({
-    formats:['woff', 'ttf' ]
-  }))
+	return src('src/fonts/*.ttf')
 
-  .pipe(src('src/fonts/*.ttf'))
-  .pipe(ttf2woff2())
+		.pipe(ttf2woff())
+		.pipe(dest('app/fonts'))
 
- .pipe(dest('app/fonts'))
+		.pipe(ttf2woff2())
+		.pipe(dest('app/fonts'))
 }
 
 
