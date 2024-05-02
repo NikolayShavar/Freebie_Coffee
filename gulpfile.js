@@ -24,15 +24,22 @@ function pughtml() {
   .pipe(browserSync.stream())
 }
 
-
-function fonts () {
+function fontsWoff() {
 	return src('src/fonts/*.ttf')
-
 		.pipe(ttf2woff())
 		.pipe(dest('app/fonts'))
+}
 
+function fontsWof2f() {
+	return src('src/fonts/*.ttf')
 		.pipe(ttf2woff2())
 		.pipe(dest('app/fonts'))
+}
+
+function fonts (cb) {
+	fontsWoff();
+	fontsWof2f();
+	cb()
 }
 
 
